@@ -44,7 +44,11 @@ window.onload = function() {
 		}
 		
 		div.setAttribute("class", "notification");
-		div.setAttribute("onclick", "notifClick()");
+		div.setAttribute("onclick", "notifClick(not" + newIdStr + ")");
+	}
+	function notifClick(id) {
+		var d = document.getElementById(id);
+		d.className += "notificationDismiss";
 	}
 	
 	newNotif("<notification version='0.1'><title>Alpha</title><appName>notify.js</appName><description>Hello, World!</description><link>index.html</link></notification>");
