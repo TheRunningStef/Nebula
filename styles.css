@@ -16,11 +16,13 @@
 		margin: 1%;
 		background-color: #F5F5F5;
 		box-shadow: 5px 5px 4px Silver;
+		font-size: 1em;
 	}
 	to {
 		margin: 0.5%;
 		background-color: white;
 		box-shadow: 10px 10px 8px lightGray;
+		font-size: 2em;
 	}
 }
 @keyframes notHover-out {
@@ -28,11 +30,13 @@
 		margin: 0.5%;
 		background-color: white;
 		box-shadow: 10px 10px 8px lightGray;
+		font-size: 2em;
 	}	
 	to {
 		margin: 1%;
 		background-color: #F5F5F5;
 		box-shadow: 5px 5px 4px Silver;
+		font-size: 1em;
 	}
 }
 .notification {
