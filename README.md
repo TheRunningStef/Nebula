@@ -1,2 +1,2 @@
 # Nebula
-The Future of OSes
+The future of OSes
