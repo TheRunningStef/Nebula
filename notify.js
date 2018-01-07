@@ -9,6 +9,10 @@ window.onload = function() {
 			return array[array.length - 1];
 		return array.slice(Math.max(array.length - n, 0));  
 		};
+	function notifClick(id) {
+		var d = document.getElementById(id);
+		d.className += "notificationDismiss";
+	}
 	
 	function newNotif(notDesc) {
 		var parser = new DOMParser();
@@ -45,10 +49,6 @@ window.onload = function() {
 		
 		div.setAttribute("class", "notification");
 		div.setAttribute("onclick", "notifClick(not" + newIdStr + ")");
-	}
-	function notifClick(id) {
-		var d = document.getElementById(id);
-		d.className += "notificationDismiss";
 	}
 	
 	newNotif("<notification version='0.1'><title>Alpha</title><appName>notify.js</appName><description>Hello, World!</description><link>index.html</link></notification>");
