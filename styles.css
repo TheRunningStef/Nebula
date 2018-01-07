@@ -35,6 +35,16 @@
 		box-shadow: 5px 5px 4px Silver;
 	}
 }
+@keyframes notDismiss {
+	from {
+		opacity: 100%;
+		height: 100em;
+	}
+	to {
+		opacity: 1%;
+		height: 1em;
+	}
+}
 .notification {
 	margin: 1%;
 	background-color: #F5F5F5;
@@ -66,3 +76,8 @@
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
 }
+.notificationDismiss {
+	animation-name: notDismiss;
+	animation: 0.5s
+}
+
