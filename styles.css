@@ -1,0 +1,66 @@
+@font-face {
+	font-family: "Raleway Thin";
+	src: url("assets/fonts/Raleway/Raleway-Thin.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Comfortaa Bold";
+	src: url("assets/fonts/Comfortaa/Comfortaa-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Comfortaa";
+	src: url("assets/fonts/Comfortaa/Comfortaa-Regular.ttf") format("truetype");
+}
+
+@keyframes notHover-in {
+	from {
+		margin: 1%;
+		background-color: #F5F5F5;
+		box-shadow: 5px 5px 4px Silver;
+	}
+	to {
+		margin: 0.5%;
+		background-color: white;
+		box-shadow: 10px 10px 8px lightGray;
+	}
+}
+@keyframes notHover-out {
+	from {
+		margin: 0.5%;
+		background-color: white;
+		box-shadow: 10px 10px 8px lightGray;
+	}	
+	to {
+		margin: 1%;
+		background-color: #F5F5F5;
+		box-shadow: 5px 5px 4px Silver;
+	}
+}
+.notification {
+	margin: 1%;
+	background-color: #F5F5F5;
+	box-shadow: 5px 5px 4px Silver;
+	padding: 1%;
+	border-radius: 25px;
+	
+	animation-name: notHover-out;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+.notification h3 {
+	font-family: Raleway Thin;
+	margin: 0%;
+}
+.notification h2 {
+	font-family: Comfortaa Bold;
+	margin-top: 1%;
+	margin-bottom: 0%;
+}
+.notification p {
+	font-family: Comfortaa;
+	margin-top: 0.5%;
+}
+.notification:hover {
+	animation-name: notHover-in;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
