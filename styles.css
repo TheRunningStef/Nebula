@@ -53,6 +53,7 @@
 .notification h3 {
 	font-family: Raleway Thin;
 	margin: 0%;
+	border-bottom: 2px orange;
 }
 .notification h2 {
 	font-family: Comfortaa Bold;
