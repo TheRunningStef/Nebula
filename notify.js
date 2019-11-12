@@ -12,59 +12,75 @@ window.onload = function() {
 
 	function newNotif(notDesc) {
 
+		var ID = "not0";
+
 		var parser = new DOMParser();
 		var xmlDoc = parser.parseFromString(notDesc,"text/xml");
 
-		var div = document.createElement('div');
-		var autd = document.createElement('div');
-		var h2 = document.createElement('h2');
-		var h3 = document.createElement('h3');
-		var p = document.createElement('p');
+		for (i in xmlDoc.getElementsByTagName("notification")) {
+			var notTag = xmlDoc.getElementsByTagName("notification")[i].childNodes;
+			var xmlNot = parser.parseFromString(notTag,"text/xml");
 
-		var title = xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
-		var appName = xmlDoc.getElementsByTagName("appName")[0].childNodes[0].nodeValue;
-		var desc = xmlDoc.getElementsByTagName("description")[0].childNodes[0].nodeValue;
-		var link = xmlDoc.getElementsByTagName("link")[0].childNodes[0].nodeValue;
+			var div = document.createElement('div');
+			var autd = document.createElement('div');
+			var cont = document.createElement('div');
+			var h2 = document.createElement('h2');
+			var h3 = document.createElement('h3');
+			var p = document.createElement('p');
 
-		h2.innerHTML = title;
-		h3.innerHTML = appName;
-		p.innerHTML = desc;
+			var title = xmlNot.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+			var appName = xmlNot.getElementsByTagName("appName")[0].childNodes[0].nodeValue;
+			var desc = xmlNot.getElementsByTagName("description")[0].childNodes[0].nodeValue;
+			var link = xmlNot.getElementsByTagName("link")[0].childNodes[0].nodeValue;
 
-		autd.appendChild(h3);
-		div.appendChild(autd);
-		div.appendChild(h2);
-		div.appendChild(p);
-		document.body.appendChild(div);
+			h2.innerHTML = title;
+			h3.innerHTML = appName;
+			p.innerHTML = desc;
 
-		if (uid.length == 0) {
-			div.setAttribute("id", "not0");
-			uid.push(0);
-		} else {
-			var newID = last(uid) + 1;
-			var newIdStr = newID.toString();
-			var ID = "not" + newIdStr;
-			div.setAttribute("id", ID);
-			uid.push(newID);
-		}
+			autd.appendChild(h3);
+			div.appendChild(autd);
+			cont.appendChild(h2);
+			cont.appendChild(p);
+			div.appendChild(cont);
+			document.body.appendChild(div);
 
-		div.setAttribute("class", "notification");
-		autd.setAttribute("class", "appTitle");
+			if (uid.length == 0) {
+				div.setAttribute("id", "not0");
+				uid.push(0);
+			} else {
+				var newID = last(uid) + 1;
+				var newIdStr = newID.toString();
+				ID = "not" + newIdStr;
+				div.setAttribute("id", ID);
+				uid.push(newID);
+			}
 
-		if (link == "auto_local") {
-			div.setAttribute("onclick", "openTool(" + appName + ", " + ID + ");");
+			div.setAttribute("class", "notification");
+			autd.setAttribute("class", "appTitle");
+			cont.setAttribute("class", "notContents");
+
+			if (link == "auto_local") {
+				div.setAttribute("onclick", "openTool(\"" + appName + "\", \"" + ID.toString() + "\", true);");
+			}
 		}
 	}
 
-	newNotif("<notification version='0.1'><title>Alpha</title><appName>oyster.notification-test</appName><description>Hello, World!</description><link>auto_local</link></notification>");
-	newNotif("<notification version='0.1'><title>Beta</title><appName>oyster.notification-test</appName><description>It's Alive!</description><link>auto_local</link></notification>");
-	newNotif("<notification version='0.1'><title>Gamma</title><appName>oyster.notification-test</appName><description>Bonj</description><link>auto_local</link></notification>");
-	newNotif("<notification version='0.1'><title>Delta</title><appName>oyster.notification-test</appName><description>ayo wagwan g</description><link>auto_local</link></notification>");
+	newNotif(`<notification version='0.1'><title>Alpha</title><appName>oyster.notification-test</appName><description>Hello, World!</description><link>auto_local</link></notification>
+	<notification version='0.1'><title>Beta</title><appName>oyster.notification-test</appName><description>It's Alive!</description><link>auto_local</link></notification>
+	<notification version='0.1'><title>Gamma</title><appName>oyster.notification-test</appName><description>Bonj</description><link>auto_local</link></notification>
+	<notification version='0.1'><title>Delta</title><appName>oyster.notification-test</appName><description>ayo wagwan g</description><link>auto_local</link></notification>`);
 }
 
-function openTool(_tool_name, _notid) {
-
-	var intrfce = document.createElement('iframe');
-	var tool = _tool_name.toString();
-	intrfce.setAttribute('src', 'tools\\' + tool + '\\index.html');
-
+function openTool(_tool_name, _notid, _ready) {
+	var wind = document.getElementById(_notid);
+	if (_ready) {
+		var intrfce = document.createElement('iframe');
+		var cont = wind.querySelector('.notContents');
+		wind.removeChild(cont);
+		wind.appendChild(intrfce);
+		intrfce.setAttribute('src', 'tools\\' + _tool_name + '\\index.html');
+		wind.setAttribute("onclick", "openTool(\"" + _tool_name + "\", \"" + _notid + "\", false);");
+	} else {
+		document.body.removeChild(wind)
+	}
 }
