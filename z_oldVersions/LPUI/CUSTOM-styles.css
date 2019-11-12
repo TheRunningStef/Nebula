@@ -1,0 +1,69 @@
+/*
+Customized LollipopUI Stylesheet
+================================
+
+for NEBULA
+
+License - TheRunningStef - 2018
+*/
+
+@keyframes notHover-in {
+	from {
+		margin: 1%;
+		background-color: #F5F5F5;
+		box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+	}
+	to {
+		margin: 0.5%;
+		background-color: white;
+		box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.4);
+	}
+}
+
+@keyframes notHover-out {
+	from {
+		margin: 0.5%;
+		background-color: white;
+		box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.4);
+	}
+	to {
+		margin: 1%;
+		background-color: #F5F5F5;
+		box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+	}
+}
+
+.toolView {
+	width:90%;
+	height: 90%;
+	margin: 10%;
+}
+
+.notification {
+	margin: 1%;
+	box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+	padding: 1%;
+	border-radius: 25px;
+	background-color: white;
+
+	animation-name: notHover-out;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.notification:hover {
+	animation-name: notHover-in;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.polysearch {
+	width: 90%;
+	height: 20px;
+	position: fixed;
+	bottom: 0;
+	background-color: white;
+	padding: 1%;
+	margin: 1%;
+	box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+}

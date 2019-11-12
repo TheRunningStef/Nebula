@@ -1,0 +1,30 @@
+/*
+Nebula Test Stylesheet
+======================
+
+for NEBULA
+
+License - TheRunningStef - 2019
+*/
+
+.notification {
+  border-top-color: darkGrey;
+  border-top-style: solid;
+  border-width: 1px;
+}
+
+.polysearch {
+  bottom: 0;
+  position: fixed;
+}
+
+iframe {
+  width: 50%
+  position: fixed;
+}
+
+iframe::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}

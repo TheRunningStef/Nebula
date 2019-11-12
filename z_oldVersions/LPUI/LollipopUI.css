@@ -1,0 +1,62 @@
+/*
+LollipopUI version 0.1.1
+========================
+
+Created by TheRunningStef
+(Leon Stefanopoulos)
+
+License - TheRunningStef - 2018
+
+Edited for NEBULA
+*/
+
+@font-face {
+	font-family: "Raleway Thin";
+	src: url("fonts/Raleway/Raleway-Thin.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Comfortaa Bold";
+	src: url("fonts/Comfortaa/Comfortaa-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Comfortaa";
+	src: url("fonts/Comfortaa/Comfortaa-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: Comfortaa;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  font-family: Raleway Thin;
+  font-size: 56px;
+  margin: 0;
+}
+
+.menu {
+  font-family: Slabo 27px, serif;
+  font-size: 27px;
+}
+
+.button {
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 9999px;
+  position: fixed;
+}
+
+.polysearch {
+	background-color: white;
+  border-radius: 9999px;
+}
