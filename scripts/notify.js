@@ -60,10 +60,10 @@ function newNotif(notDesc) {
 }
 
 window.onload = function() {
-	newNotif("<notification version='0.1'><title>Alpha</title><appName>oyster.notification-test</appName><description>Hello, World!</description><link>auto_local</link></notification>");
-	newNotif("<notification version='0.1'><title>Beta</title><appName>oyster.notification-test</appName><description>It's Alive!</description><link>auto_local</link></notification>");
-	newNotif("<notification version='0.1'><title>Gamma</title><appName>oyster.notification-test</appName><description>Bonj</description><link>auto_local</link></notification>");
-	newNotif("<notification version='0.1'><title>Delta</title><appName>oyster.notification-test</appName><description>ayo wagwan g</description><link>auto_local</link></notification>");
+	newNotif("<notification version='0.1'><title>Alpha</title><appName>oyster.notiftst.sys</appName><description>Hello, World!</description><link>auto_local</link></notification>");
+	newNotif("<notification version='0.1'><title>Beta</title><appName>oyster.notiftst.sys</appName><description>It's Alive!</description><link>auto_local</link></notification>");
+	newNotif("<notification version='0.1'><title>Gamma</title><appName>oyster.notiftst.sys</appName><description>Bonj</description><link>auto_local</link></notification>");
+	newNotif("<notification version='0.1'><title>Delta</title><appName>oyster.notiftst.sys</appName><description>ayo wagwan g</description><link>auto_local</link></notification>");
 }
 
 function openTool(_tool_name, _notid, _ready) {
@@ -73,7 +73,7 @@ function openTool(_tool_name, _notid, _ready) {
 		var cont = wind.querySelector('.notContents');
 		wind.removeChild(cont);
 		wind.appendChild(intrfce);
-		intrfce.setAttribute('src', 'tools\\' + _tool_name + '\\index.html');
+		intrfce.setAttribute('src', 'bots\\' + _tool_name + '\\index.html');
 		wind.setAttribute("onclick", "openTool(\"" + _tool_name + "\", \"" + _notid + "\", false);");
 	} else {
 		document.body.removeChild(wind)
