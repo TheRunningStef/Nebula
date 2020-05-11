@@ -1,0 +1,9 @@
+{
+  "name": "oyster.notiftst.sys"
+  "short_name": "notification_test",
+  "version": [0, 1],
+  "modules": {
+    "new": "notification_test"
+  }
+  "description": "..."
+}

@@ -1,0 +1,7 @@
+{
+  "name": "virtual_repo",
+  "version": [0, 1],
+  "bots": {
+    "notification_test": "oyster.notiftst.sys"
+  }
+}
